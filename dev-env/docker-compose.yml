@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+  mysql:
+    image: mysql:5.7.33
+    container_name: mysql
+    volumes:
+      - mysql_data:/var/lib/mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: movie_db
+      MYSQL_USER: movie
+      MYSQL_PASSWORD: movie
+
+volumes:
+  mysql_data:
+    name: mysql_data
